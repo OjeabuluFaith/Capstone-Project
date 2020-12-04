@@ -24,7 +24,7 @@ class JobSpider(scrapy.Spider):
     def parse(self,response):
         jobs_items = JobsItemsSpider()
         
-        jobs = response.xpath('//article[@class ="search-result "]/text()').extract()
+       # jobs = response.xpath('//article[@class ="search-result "]/text()').extract()
         
         
         name = response.xpath('//h3/text()').extract()
