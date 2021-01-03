@@ -1,6 +1,6 @@
 # Capstone Project (Python Basics)
 
-"""
+
 Create an extensive job listings bot that focus on Jobberman. For this project, please note the following:
 
 (1) Use a virtual environment to manage project dependencies.
