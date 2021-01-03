@@ -24,3 +24,5 @@ Create an extensive job listings bot that focus on Jobberman. For this project, 
 NOTE:
 - Your project is expected to written using the OOP style as much as possible, following proper coding style guide (PEP8).
 - Use Git & GitHub as your version control system VCS.
+
+![Job Listing](job-listing.png)
