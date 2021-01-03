@@ -4,6 +4,7 @@ import re
 from job_listing import JobListing
 
 
+
 class Scraper:
     """
     A class to handle all scraping operations.
@@ -63,42 +64,42 @@ class Scraper:
                 title = container.find(
                     'a', class_="search-result__job-title").get("title")
             except AttributeError:
-                title = "Not Available"
+                title = "--"
 
             # Link
             try:
                 link = container.find(
                     'a', class_="search-result__job-title").get("href")
             except AttributeError:
-                link = "Not Available"
+                link = "--"
 
             # Employer
             try:
                 employer = container.find(
                     'div', class_="search-result__job-meta").get_text().strip()
             except AttributeError:
-                employer = "Not Available"
+                employer = "--"
 
             # Logo
             try:
                 logo = container.find(
                     'img', class_="employer-logo__image").get("data-src")
             except AttributeError:
-                logo = "Not Available"
+                logo = "--"
 
             # Location
             try:
                 location = container.find(
                     'div', class_="search-result__location").get_text().strip()
             except AttributeError:
-                location = "Not Available"
+                location = "--"
 
             # Type
             try:
                 type = container.find(
                     'span', class_="search-result__job-type").get_text().strip()
             except AttributeError:
-                type = "Not Available"
+                type = "--"
 
             # Salary
             try:
@@ -106,7 +107,7 @@ class Scraper:
                     'div', class_="search-result__job-salary").get_text().replace('\n', '').strip()
                 salary = re.sub(r"\s\s+", " ", salary)
             except AttributeError:
-                salary = "Not Available"
+                salary = "--"
 
             # Sector
             try:
@@ -115,7 +116,7 @@ class Scraper:
                 sector = sector_div.find(
                     'span', class_="padding-lr-10 gutter-flush-under-lg").get_text().strip()
             except AttributeError:
-                sector = "Not Available"
+                sector = "--"
 
             # Summary
             try:
@@ -123,7 +124,7 @@ class Scraper:
                     'div', class_="search-result__content")
                 summary = summary_div.find('p').get_text().strip()
             except AttributeError:
-                summary = "Not Available"
+                summary = "--"
 
             # Timestamp
             try:
@@ -132,7 +133,7 @@ class Scraper:
                 timestamp = timestamp_div.find(
                     'div', class_="if-wrapper-column align-self--end text--right").get_text().strip()
             except AttributeError:
-                timestamp = "Not Available"
+                timestamp = "--"
 
             print(title)
             job_listing = JobListing(
